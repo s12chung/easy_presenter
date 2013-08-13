@@ -52,10 +52,10 @@ end
 ```
 
 ### Supported ORMs
-ActiveRecord, Mongoid, you may add support to an ORM at the bottom of `lib/easy_presenter.rb` and send in a pull request if you wish.
+`ActiveRecord`, `Mongoid`, you may add support to an ORM at the bottom of `lib/easy_presenter.rb` and send in a pull request if you wish.
 
 ### Advanced
-You may use the following modules to add EasyPresenter support to other classes.
+You may use the following modules to add EasyPresenter to other classes.
 
 * `EasyPresenter::Base` - add access to view methods
 * `EasyPresenter` - `EasyPresenter::Base` and if `method_missing?`, give access to the `ClassNamePresenter` class
