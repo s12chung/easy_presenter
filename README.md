@@ -19,7 +19,7 @@ module UserPresenter
 
   # Quick link to the `User`
   def link
-    link_to full_name, user_url(self)
+    link_to full_name, user_path(self)
   end
 
   # Using a module, so you must do this to add class methods
@@ -35,7 +35,7 @@ end
 
 Access your presenter methods in a view:
 ```erb
-# app/views/users/index.html.erb
+<!-- app/views/users/index.html.erb -->
 <% User.all.each do |user| %>
   <%= user.link %><br>
 <% end %>
@@ -43,7 +43,6 @@ Access your presenter methods in a view:
 
 Or a helper:
 ```ruby
-# Given a model User
 # app/helpers/users_helper.rb
 module UsersHelper
   def full_names_in_div
@@ -58,8 +57,8 @@ ActiveRecord, Mongoid, you may add support to an ORM at the bottom of `lib/easy_
 ### Advanced
 You may use the following modules to add EasyPresenter support to other classes.
 
-`EasyPresenter::Base` - add access to view methods
-`EasyPresenter` - `EasyPresenter::Base` and if `method_missing?`, give access to the `ClassNamePresenter` class
+* `EasyPresenter::Base` - add access to view methods
+* `EasyPresenter` - `EasyPresenter::Base` and if `method_missing?`, give access to the `ClassNamePresenter` class
 
 ## Credits
 Extracted out of [Placemark](https://www.placemarkhq.com/).
