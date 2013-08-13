@@ -1,29 +1,68 @@
 # EasyPresenter
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'easy_presenter'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install easy_presenter
+Access view methods from the context of your model.
 
 ## Usage
+### Easy
+```
+gem 'easy_presenter'
+```
 
-TODO: Write usage instructions here
+Given a model `User`
+```ruby
+# app/presenters/user_presenter.rb
+module UserPresenter
+  # Separate view of the model in the presenter, even if it's a `String`. Leave data manipulation in the model.
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 
-## Contributing
+  # Quick link to the `User`
+  def link
+    link_to full_name, user_url(self)
+  end
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+  # Using a module, so you must do this to add class methods
+  module ClassMethods
+    # String of all full names separated by commas
+    def full_names
+        # better to access `User` this way, you may use `User` instead of `self.class` though.
+        self.class.all.map(&:full_name).join(", ")
+    end
+  end
+end
+```
+
+Access your presenter methods in a view:
+```erb
+# app/views/users/index.html.erb
+<% User.all.each do |user| %>
+  <%= user.link %><br>
+<% end %>
+```
+
+Or a helper:
+```ruby
+# Given a model User
+# app/helpers/users_helper.rb
+module UsersHelper
+  def full_names_in_div
+    content_tag :div, User.full_names
+  end
+end
+```
+
+### Supported ORMs
+ActiveRecord, Mongoid, you may add support to an ORM at the bottom of `lib/easy_presenter.rb` and send in a pull request if you wish.
+
+### Advanced
+You may use the following modules to add EasyPresenter support to other classes.
+
+`EasyPresenter::Base` - add access to view methods
+`EasyPresenter` - `EasyPresenter::Base` and if `method_missing?`, give access to the `ClassNamePresenter` class
+
+## Credits
+Extracted out of [Placemark](https://www.placemarkhq.com/).
+
+### Contribution
+Feel free to fork, post issues or send any pull requests. Thanks.
