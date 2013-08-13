@@ -61,17 +61,14 @@ You may `include` the following modules to add EasyPresenter to other classes.
 * `EasyPresenter` - `EasyPresenter::Base` and if `method_missing?`, give access to the `ClassNamePresenter` class
 
 For example:
+To add access to view methods to all instances or subclasses (such as an ORM).
 ```ruby
 # config/initializers/add_presenter_to_orm.rb
 # Find the base or shared class, for `ActiveRecord` it's `ActiveRecord::Base` and `Mongoid` it's `Mongoid::Document`
 Orm::BaseClass.send :include, EasyPresenter
 ```
-```ruby
-# app/models/non_database_model.rb
-class NonDatabaseModel
-    include EasyPresenter
-end
-```
+
+For all instances of a basic class.
 ```ruby
 # app/models/non_database_model.rb
 class NonDatabaseModel
@@ -87,6 +84,8 @@ module NonDatabaseModelPresenter
     end
 end
 ```
+
+For all instances of a basic class without need of a ClassNamePresenter class.
 ```ruby
 # app/models/some_view_object.rb
 class SomeViewObject
