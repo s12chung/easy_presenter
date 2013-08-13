@@ -55,10 +55,48 @@ end
 `ActiveRecord`, `Mongoid`, you may add support to an ORM at the bottom of `lib/easy_presenter.rb` and send in a pull request if you wish.
 
 ### Advanced
-You may use the following modules to add EasyPresenter to other classes.
+You may `include` the following modules to add EasyPresenter to other classes.
 
 * `EasyPresenter::Base` - add access to view methods
 * `EasyPresenter` - `EasyPresenter::Base` and if `method_missing?`, give access to the `ClassNamePresenter` class
+
+For example:
+```ruby
+# config/initializers/add_presenter_to_orm.rb
+# Find the base or shared class, for `ActiveRecord` it's `ActiveRecord::Base` and `Mongoid` it's `Mongoid::Document`
+Orm::BaseClass.send :include, EasyPresenter
+```
+```ruby
+# app/models/non_database_model.rb
+class NonDatabaseModel
+    include EasyPresenter
+end
+```
+```ruby
+# app/models/non_database_model.rb
+class NonDatabaseModel
+    include EasyPresenter
+end
+
+# app/presenters/non_database_model_presenter.rb
+module NonDatabaseModelPresenter
+    ...
+
+    module ClassMethods
+        ...
+    end
+end
+```
+```ruby
+# app/models/some_view_object.rb
+class SomeViewObject
+    include EasyPresenter::Base
+
+    def random_link
+        link_to "random", "http://www.random.com"
+    end
+end
+```
 
 ## Credits
 Extracted out of [Placemark](https://www.placemarkhq.com/).
