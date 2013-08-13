@@ -1,6 +1,6 @@
 # EasyPresenter
 
-Access view methods from the context of your model.
+Access view methods from the context of your `Ruby on Rails` model.
 
 ## Usage
 ### Easy
