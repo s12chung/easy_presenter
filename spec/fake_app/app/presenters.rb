@@ -8,7 +8,7 @@ module UserPresenter
 
   module ClassMethods
     def full_names
-      self.class.all.map(&:full_name).join(", ")
+      all.map(&:full_name).join(", ")
     end
   end
 end

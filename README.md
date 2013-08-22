@@ -26,8 +26,7 @@ module UserPresenter
   module ClassMethods
     # String of all full names separated by commas
     def full_names
-        # better to access `User` this way, you may use `User` instead of `self.class` though.
-        self.class.all.map(&:full_name).join(", ")
+        all.map(&:full_name).join(", ")
     end
   end
 end
