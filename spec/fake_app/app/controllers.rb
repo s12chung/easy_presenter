@@ -11,6 +11,12 @@ class UsersController < ApplicationController
   end
 end
 
+class GamesController < ApplicationController
+  def show
+    @game = User.find(params[:user_id]).games.find(params[:id])
+  end
+end
+
 class TreesController < ApplicationController
   def show
     @tree = Tree.find params[:id]

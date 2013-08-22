@@ -13,6 +13,12 @@ module UserPresenter
   end
 end
 
+module GamePresenter
+  def free?
+    name == "Team Fortress 2"
+  end
+end
+
 module TreePresenter
   def url
     tree_url(self)

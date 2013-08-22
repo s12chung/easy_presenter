@@ -17,7 +17,7 @@ RSpec.configure do |config|
     end
   end
   config.before :each do
-    %w[User Tree].each do |klass|
+    %w[User Game Tree].each do |klass|
       klass.constantize.delete_all
     end
   end
