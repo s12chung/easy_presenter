@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/s12chung/easy_presenter.png?branch=master)](https://travis-ci.org/s12chung/easy_presenter?branch=master)
-
-# EasyPresenter
+# EasyPresenter [![Build Status](https://travis-ci.org/s12chung/easy_presenter.png?branch=master)](https://travis-ci.org/s12chung/easy_presenter?branch=master) [![Code Climate](https://codeclimate.com/github/s12chung/easy_presenter.png)](https://codeclimate.com/github/s12chung/easy_presenter)
 
 Access view methods from the context of your `Ruby on Rails` model.
 
