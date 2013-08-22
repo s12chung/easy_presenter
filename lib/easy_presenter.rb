@@ -10,9 +10,14 @@ module EasyPresenter
   end
 
   module ClassMethods
+    def inherited(subclass)
+      include_easy_presenter(subclass)
+      super
+    end
+
     protected
-    def include_easy_presenter
-      presenter_class = "#{self}Presenter".safe_constantize
+    def include_easy_presenter(klass=self)
+      presenter_class = "#{klass}Presenter".safe_constantize
       if presenter_class
         presenter_class.extend ActiveSupport::Concern
         include presenter_class
@@ -34,6 +39,8 @@ module EasyPresenter
   end
 end
 
-if defined?(Mongoid::Document)
+if defined?(ActiveRecord::Base)
+  ActiveRecord::Base.send :include, EasyPresenter
+elsif defined?(Mongoid::Document)
   Mongoid::Document.send :include, EasyPresenter
 end
