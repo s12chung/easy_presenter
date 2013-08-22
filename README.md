@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/s12chung/easy_presenter.png?branch=master)](https://travis-ci.org/s12chung/easy_presenter?branch=master)
+
 # EasyPresenter
 
 Access view methods from the context of your `Ruby on Rails` model.
