@@ -17,6 +17,8 @@ RSpec.configure do |config|
     end
   end
   config.before :each do
-    User.delete_all
+    %w[User Tree].each do |klass|
+      klass.constantize.delete_all
+    end
   end
 end

@@ -12,3 +12,9 @@ module UserPresenter
     end
   end
 end
+
+module TreePresenter
+  def url
+    tree_url(self)
+  end
+end
