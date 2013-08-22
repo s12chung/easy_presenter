@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = EasyPresenter::VERSION
   spec.authors       = ["s12chung"]
   spec.email         = ["steve.chung7@gmail.com"]
-  spec.description   = "Access view methods in your models."
-  spec.summary       = "Access view methods in your models."
+  spec.description   = "Access view methods from model instances."
+  spec.summary       = "Access view methods from model instances."
   spec.homepage      = "https://github.com/s12chung/easy_presenter"
   spec.license       = "MIT"
 
