@@ -57,6 +57,7 @@ end
 ### Advanced
 You may `include` the following modules to add EasyPresenter to other classes.
 
+* `easy_presenter_subclass` - for handling subclasses
 * `EasyPresenter::Base` - add access to view methods
 * `EasyPresenter` - `EasyPresenter::Base` and if `method_missing?`, give access to the `ClassNamePresenter` class
 

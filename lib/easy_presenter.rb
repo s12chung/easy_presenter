@@ -6,11 +6,19 @@ module EasyPresenter
   extend ActiveSupport::Concern
 
   included do
-    presenter_class = "#{self}Presenter".safe_constantize
-    if presenter_class
-      include Base
-      presenter_class.extend ActiveSupport::Concern
-      include presenter_class
+    easy_presenter_subclass
+  end
+
+  module ClassMethods
+    protected
+    def easy_presenter_subclass
+      presenter_class = "#{self}Presenter".safe_constantize
+      if presenter_class
+        presenter_class.extend ActiveSupport::Concern
+        include presenter_class
+        include Base
+      end
+      presenter_class
     end
   end
 
