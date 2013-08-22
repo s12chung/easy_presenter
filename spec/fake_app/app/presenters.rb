@@ -12,6 +12,17 @@ module UserPresenter
     end
   end
 end
+module QueenPresenter
+  def link
+    link_to "parent"
+  end
+end
+
+module PrincePresenter
+  def link
+    link_to "child"
+  end
+end
 
 module GamePresenter
   def free?

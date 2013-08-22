@@ -20,8 +20,8 @@ module EasyPresenter
       presenter_class = "#{klass}Presenter".safe_constantize
       if presenter_class
         presenter_class.extend ActiveSupport::Concern
-        include presenter_class
-        include Base
+        klass.send :include, presenter_class
+        klass.send :include, Base
       end
       presenter_class
     end

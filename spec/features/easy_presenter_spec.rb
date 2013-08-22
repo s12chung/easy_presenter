@@ -25,4 +25,25 @@ feature 'fallback to controller context' do
     visit "/users"
     page.should have_content 'Ji-yoon Park, Bret Victor'
   end
+
+  scenario 'not a active record model' do
+    visit "/users/new?class=queen"
+    within 'a' do
+      page.should have_content 'parent'
+    end
+  end
+
+  scenario 'child of a active record model' do
+    visit "/users/new?class=prince"
+    within 'a' do
+      page.should have_content 'child'
+    end
+  end
+
+  scenario 'including just base' do
+    visit "/users/new?class=paper"
+    within 'a' do
+      page.should have_content 'base'
+    end
+  end
 end
