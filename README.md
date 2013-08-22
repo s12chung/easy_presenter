@@ -57,7 +57,7 @@ end
 You may `include` the following modules to add EasyPresenter to other classes.
 
 * `EasyPresenter::Base` - add access to view methods
-* `EasyPresenter` - `EasyPresenter::Base` and if `method_missing?`, give access to the `ClassNamePresenter` class. Subclasses will also have the same effect.
+* `EasyPresenter` - Give access to the `ClassNamePresenter` class that has access to view methods. Subclasses will also have the same effect.
 
 
 To add access to view methods to all instances or subclasses (such as an ORM).
