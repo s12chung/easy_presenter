@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["steve.chung7@gmail.com"]
   spec.description   = "Access view methods in your models."
   spec.summary       = "Access view methods in your models."
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/s12chung/easy_presenter"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
