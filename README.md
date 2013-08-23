@@ -1,4 +1,4 @@
-# EasyPresenter [![Build Status](https://travis-ci.org/s12chung/easy_presenter.png?branch=master)](https://travis-ci.org/s12chung/easy_presenter?branch=master) [![Code Climate](https://codeclimate.com/github/s12chung/easy_presenter.png)](https://codeclimate.com/github/s12chung/easy_presenter)
+# EasyPresenter [![Gem Version](https://badge.fury.io/rb/easy_presenter.png)](http://badge.fury.io/rb/easy_presenter) [![Build Status](https://travis-ci.org/s12chung/easy_presenter.png?branch=master)](https://travis-ci.org/s12chung/easy_presenter?branch=master) [![Code Climate](https://codeclimate.com/github/s12chung/easy_presenter.png)](https://codeclimate.com/github/s12chung/easy_presenter)
 
 Access view methods from model instances in `Ruby on Rails`.
 
