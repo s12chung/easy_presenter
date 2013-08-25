@@ -54,6 +54,10 @@ end
 `ActiveRecord`, `Mongoid`, you may add support to an ORM at the bottom of `lib/easy_presenter.rb` and send in a pull request if you wish.
 
 ### Advanced
+#### Instance Variables
+You can get controller instance variables using `controller_get(:@instance_variable)`, which calls `Object#instance_variable_get(p1)` on the controller.
+
+#### Non-Supported ORM Models
 You may `include` the following modules to add EasyPresenter to other classes.
 
 * `EasyPresenter::Base` - add access to view methods
