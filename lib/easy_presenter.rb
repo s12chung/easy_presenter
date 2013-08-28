@@ -1,3 +1,5 @@
+require 'request_store'
+
 require "easy_presenter/version"
 require "easy_presenter/base"
 require "easy_presenter/railtie"
