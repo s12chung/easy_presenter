@@ -1,5 +1,3 @@
-require 'easy_presenter'
-
 class User < ActiveRecord::Base
   has_many :games
 end
