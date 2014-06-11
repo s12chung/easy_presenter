@@ -8,8 +8,8 @@ describe EasyPresenter::Base, :type => :feature do
   describe "#url_options" do
     it "should allow using Rails #url_for helpers" do
       path = "/trees/#{@tree.id}"
-      visit "/trees/#{@tree.id}"
-      page.should have_content "http://www.example.com#{"/trees/#{@tree.id}"}"
+      visit path
+      page.should have_content "http://www.example.com#{path}"
     end
   end
 end
