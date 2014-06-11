@@ -1,6 +1,9 @@
 require 'rails'
+require 'active_record'
 require 'action_controller/railtie'
 require 'action_view/railtie'
+
+require 'easy_presenter'
 
 # config
 ActiveRecord::Base.establish_connection(:adapter => 'sqlite3', :database => ':memory:')
