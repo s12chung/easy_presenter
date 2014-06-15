@@ -4,9 +4,6 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'fake_app/fake_app'
 require 'rspec/rails'
 
-require 'coveralls'
-Coveralls.wear!
-
 RSpec.configure do |config|
   config.before :all do
     unless ActiveRecord::Base.connection.table_exists? 'users'
